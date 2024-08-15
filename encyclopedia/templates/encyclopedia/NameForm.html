@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %} 
+{% block title %} Encyclopedia {%endblock %} 
+{% block body %}
+{% if validation%}
+<form  method="post">
+  {% csrf_token %}
+  <label for="Name">Title:</label>
+  <input id="body_page" type="text" placeholder="Enter title" name="title" required /><br />
+  <label for="Name">Body:</label>
+  <input id="body_page" type="text" placeholder="Enter text" name="body" required /><br />
+  <input type="submit" placeholder="Create page>" value="create" />
+</form>
+{% else %}
+<form  method="post">
+  {% csrf_token %}
+  <label for="Name">Title:</label>
+  <input id="body_page" type="text" placeholder="Enter title" name="title" required /><br />
+  <label for="Name">Body:</label>
+  <input id="body_page" type="text" placeholder="Enter text" name="body" required /><br />
+  <input type="submit" placeholder="Create page>" value="create" />
+</form>
+      {{pro}}
+{% endif %}
+
+{% endblock %}
